@@ -5,22 +5,26 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="ru"/>
-
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
-
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
-
 <div class="container" id="page">
-
     <div id="header">
         <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
     </div>
     <!-- header -->
 
-    <div id="mainmenu"></div>
+    <div id="mainmenu">
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+            <li><a href="#">Page 4</a></li>
+            <li><a href="#">Page 5</a></li>
+        </ul>
+    </div>
 
     <?php echo $content; ?>
 

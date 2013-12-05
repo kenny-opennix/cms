@@ -59,6 +59,8 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
+            'enableProfiling'=>true,
+            'enableParamLogging' => true,
 			'connectionString' => 'mysql:host=localhost;dbname=hatt',
 			'emulatePrepare' => true,
 			'username' => 'hatt',
@@ -70,7 +72,22 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-		'log'=>array(
+        'log'=>array(
+            'class'=>'CLogRouter',
+            'enabled'=>YII_DEBUG,
+            'routes'=>array(
+                #...
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'error, warning',
+                ),
+                array(
+                    'class'=>'application.extensions.yii-debug-toolbar.YiiDebugToolbarRoute',
+                    'ipFilters'=>array('127.0.0.1'),
+                ),
+            ),
+        )
+/*		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
@@ -83,8 +100,8 @@ return array(
 					'class'=>'CWebLogRoute',
 				),
 				*/
-			),
-		),
+			/*),
+		)*/
 	),
 
 	// application-level parameters that can be accessed
