@@ -1866,3 +1866,510 @@ HTTP_REFERER=http://hatt-cms.web/profile/edit
 REQUEST_URI=/site/index
 HTTP_REFERER=http://hatt-cms.web/profile/edit
 ---
+2013/12/05 23:24:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/edit')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/edit
+---
+2013/12/05 23:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/edit')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/edit
+---
+2013/12/05 23:25:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/edit')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/edit
+---
+2013/12/05 23:25:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/edit')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/edit
+---
+2013/12/06 00:01:09 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "redirect".' in /var/www/hatt-cms/base/CComponent.php:266
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(23): CComponent->__call('redirect', Array)
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(23): CWebApplication->redirect('profile/login')
+#2 /var/www/hatt-cms/web/CWebApplication.php(281): ProfileController->init()
+#3 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#4 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 00:07:06 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.action" is not defined.' in /var/www/hatt-cms/base/CComponent.php:130
+Stack trace:
+#0 /var/www/hatt-cms/base/CModule.php(105): CComponent->__get('action')
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(26): CModule->__get('action')
+#2 /var/www/hatt-cms/web/CWebApplication.php(281): ProfileController->init()
+#3 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#4 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 00:07:21 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.action" is not defined.' in /var/www/hatt-cms/base/CComponent.php:130
+Stack trace:
+#0 /var/www/hatt-cms/base/CModule.php(105): CComponent->__get('action')
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(26): CModule->__get('action')
+#2 /var/www/hatt-cms/web/CWebApplication.php(281): ProfileController->init()
+#3 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#4 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 00:07:22 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.action" is not defined.' in /var/www/hatt-cms/base/CComponent.php:130
+Stack trace:
+#0 /var/www/hatt-cms/base/CModule.php(105): CComponent->__get('action')
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(26): CModule->__get('action')
+#2 /var/www/hatt-cms/web/CWebApplication.php(281): ProfileController->init()
+#3 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#4 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 00:07:22 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.action" is not defined.' in /var/www/hatt-cms/base/CComponent.php:130
+Stack trace:
+#0 /var/www/hatt-cms/base/CModule.php(105): CComponent->__get('action')
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(26): CModule->__get('action')
+#2 /var/www/hatt-cms/web/CWebApplication.php(281): ProfileController->init()
+#3 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#4 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 00:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/profile...')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/profile/login
+---
+2013/12/06 00:11:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in /var/www/hatt-cms/web/CController.php:483
+Stack trace:
+#0 /var/www/hatt-cms/web/CController.php(270): CController->missingAction('profile')
+#1 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('profile')
+#2 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/profile...')
+#3 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/profile/login
+---
+2013/12/06 00:11:30 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:11:35 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:16 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:17 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:25 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:54 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:55 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:55 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:12:56 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:06 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:06 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:07 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:08 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:13:08 [error] [php] strpos() expects parameter 1 to be string, array given (/var/www/hatt-cms/web/CHttpRequest.php:801)
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#1 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#2 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/hatt-cms/web/CController.php(286): ProfileController->runAction()
+#4 /var/www/hatt-cms/web/CController.php(265): ProfileController->runActionWithFilters()
+#5 /var/www/hatt-cms/web/CWebApplication.php(282): ProfileController->run()
+#6 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/hatt-cms/hatt-cms/index.php(13): CWebApplication->run()
+REQUEST_URI=/profile
+2013/12/06 00:15:32 [error] [exception.CException] exception 'CException' with message 'AuthService and its behaviors do not have a method or closure named "redirect".' in /var/www/hatt-cms/base/CComponent.php:266
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/service/AuthService.php(52): CComponent->__call('redirect', Array)
+#1 /var/www/hatt-cms/hatt-cms/protected/service/AuthService.php(52): AuthService->redirect(Array)
+#2 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(7): AuthService->checkAuthAndRedirect()
+#3 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionIndex()
+#4 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/hatt-cms/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /var/www/hatt-cms/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('')
+#8 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile')
+#9 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/profile
+---
+2013/12/06 10:10:32 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "isPostRequest".' in /var/www/hatt-cms/base/CComponent.php:266
+Stack trace:
+#0 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(18): CComponent->__call('isPostRequest', Array)
+#1 /var/www/hatt-cms/hatt-cms/protected/controllers/ProfileController.php(18): CHttpRequest->isPostRequest()
+#2 /var/www/hatt-cms/web/actions/CInlineAction.php(49): ProfileController->actionLogin()
+#3 /var/www/hatt-cms/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/hatt-cms/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/hatt-cms/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/hatt-cms/web/CWebApplication.php(282): CController->run('login')
+#7 /var/www/hatt-cms/web/CWebApplication.php(141): CWebApplication->runController('profile/login')
+#8 /var/www/hatt-cms/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/hatt-cms/hatt-cms/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/profile/login
+HTTP_REFERER=http://hatt-cms.web/profile/login
+---

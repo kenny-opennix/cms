@@ -5,8 +5,10 @@
  *
  * The followings are the available columns in table 'users':
  * @property string $id
+ * @property string $auth_token
  * @property string $login
  * @property string $email
+ * @property string $pass
  * @property string $reg_date
  * @property integer $level
  * @property integer $reg_ip
@@ -32,15 +34,16 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, email, reg_date, birthday', 'required'),
+			array('login, email, pass, reg_date, birthday', 'required'),
 			array('level, reg_ip', 'numerical', 'integerOnly'=>true),
+			array('auth_token, pass', 'length', 'max'=>32),
 			array('login', 'length', 'max'=>50),
 			array('email', 'length', 'max'=>128),
 			array('avatar', 'length', 'max'=>255),
 			array('gender', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, login, email, reg_date, level, reg_ip, avatar, gender, birthday', 'safe', 'on'=>'search'),
+			array('id, auth_token, login, email, pass, reg_date, level, reg_ip, avatar, gender, birthday', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,8 +65,10 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'auth_token' => 'Auth Token',
 			'login' => 'Login',
 			'email' => 'Email',
+			'pass' => 'Pass',
 			'reg_date' => 'Reg Date',
 			'level' => 'Level',
 			'reg_ip' => 'Reg Ip',
@@ -92,8 +97,10 @@ class Users extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+		$criteria->compare('auth_token',$this->auth_token,true);
 		$criteria->compare('login',$this->login,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('pass',$this->pass,true);
 		$criteria->compare('reg_date',$this->reg_date,true);
 		$criteria->compare('level',$this->level);
 		$criteria->compare('reg_ip',$this->reg_ip);

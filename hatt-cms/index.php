@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
