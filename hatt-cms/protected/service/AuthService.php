@@ -10,6 +10,11 @@
  */
 class AuthService
 {
+    /**
+     * @const string Key from _SESSION
+     */
+    const CA = 'current_user';
+
     private static $instance = null;
 
     /**
@@ -29,17 +34,18 @@ class AuthService
      */
     public function checkAuth()
     {
-        if (!isset($_COOKIE['auth_token'])) {
+        $authToken = (isset($_COOKIE['auth_token'])) ? htmlspecialchars($_COOKIE['auth_token']) : false;
+        if (!isset($authToken)) {
             return false;
         }
 
-        $user = Users::model();
-        $user->auth_token = $_COOKIE['auth_token'];
-        /**
-         * @var CActiveDataProvider
-         */
-        $user = $user->search();
-        if ($user->getItemCount()) {
+        if (isset($_SESSION[self::CA])) {
+            return true;
+        }
+
+        $user = Users::model()->find('auth_token=:at', array(':at' => $authToken));
+        if ($user) {
+            $_SESSION[self::CA] = $user->getAttributes();
             return true;
         }
 
