@@ -82,10 +82,10 @@ return array(
                     'class'=>'CFileLogRoute',
                     'levels'=>'error, warning',
                 ),
-                array(
+/*                array(
                     'class'=>'application.extensions.yii-debug-toolbar.YiiDebugToolbarRoute',
                     'ipFilters'=>array('127.0.0.1'),
-                ),
+                ), */
             ),
         )
 /*		'log'=>array(

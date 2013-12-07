@@ -11,15 +11,19 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Дамп структуры базы данных hatt
+DROP DATABASE IF EXISTS `hatt`;
 CREATE DATABASE IF NOT EXISTS `hatt` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `hatt`;
 
 
 -- Дамп структуры для таблица hatt.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `auth_token` char(32) DEFAULT NULL,
   `login` varchar(50) NOT NULL,
   `email` varchar(128) NOT NULL,
+  `pass` varchar(32) NOT NULL,
   `reg_date` datetime NOT NULL,
   `level` tinyint(1) NOT NULL DEFAULT '0',
   `reg_ip` int(1) NOT NULL DEFAULT '0',
@@ -28,11 +32,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `birthday` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login` (`login`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `auth_token` (`auth_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы hatt.users: ~0 rows (приблизительно)
+-- Дамп данных таблицы hatt.users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
+	(1, '123', 'dimka3210', 'dimka3210@gmail.com', '123', '2013-12-05 23:47:19', 1, 0, NULL, '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
