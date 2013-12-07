@@ -35,7 +35,7 @@ class AuthService
     public function checkAuth()
     {
         $authToken = (isset($_COOKIE['auth_token'])) ? htmlspecialchars($_COOKIE['auth_token']) : false;
-        if (!isset($authToken)) {
+        if (!$authToken) {
             return false;
         }
 
