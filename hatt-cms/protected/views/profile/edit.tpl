@@ -67,6 +67,4 @@
         {CHtml::submitButton('Submit')}
     </div>
 
-    {*{$this->form->endWidget()}*}
-
 </div><!-- form -->

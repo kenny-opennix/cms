@@ -2,6 +2,11 @@
 
 class ProfileController extends Controller
 {
+    /**
+     * @var CActiveForm
+     * Не знаю почему, но Smarty пытается преобразовать его в строку.
+     * Поэтому делаем прямое обращение.
+     */
     public $form;
 
     public function actionIndex()
