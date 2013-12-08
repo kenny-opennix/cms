@@ -5,6 +5,7 @@ class ProfileController extends Controller
     public function actionIndex()
     {
         $this->_checkAuth();
+        $this->view('user_info', $_SESSION[AuthService::CA]);
         $this->render('index');
     }
 
