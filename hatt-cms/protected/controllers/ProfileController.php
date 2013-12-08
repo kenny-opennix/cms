@@ -2,16 +2,32 @@
 
 class ProfileController extends Controller
 {
+    public $form;
+
     public function actionIndex()
     {
         $this->_checkAuth();
-        $this->view('user_info', $_SESSION[AuthService::CA]);
-        $this->render('index');
+        $this->render('index', array('user_info' => $_SESSION[AuthService::CA]));
     }
 
     public function actionEdit()
     {
-        $this->render('edit', array('a' => 'b'));
+        $this->_checkAuth();
+        $model = Users::model()->findByPk($_SESSION[AuthService::CA]['id']);
+
+        if (isset($_POST['Users'])) {
+            $model->setAttributes($_POST['Users']);
+            if ($model->validate()) {
+                $model->save();
+            }
+        }
+
+        $this->form = $this->beginWidget('CActiveForm', [
+            'id' => 'users-edit-form',
+            'enableAjaxValidation' => false
+        ]);
+
+        $this->render('edit', array('model' => $model));
     }
 
     public function actionLogin()
