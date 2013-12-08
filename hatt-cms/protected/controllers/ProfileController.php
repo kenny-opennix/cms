@@ -10,18 +10,27 @@ class ProfileController extends Controller
 
     public function actionEdit()
     {
-        echo md5('123');
-        $this->render('edit');
+        $this->render('edit', array('a' => 'b'));
     }
 
     public function actionLogin()
     {
+        /**
+         * Если авторизован, то кидаем на страницу просмотра профиля
+         */
+        if (AuthService::getInstance()->checkAuth()) {
+            $this->redirect(array('profile/index'));
+        }
+
+        /**
+         * Если метод POST, то пытаемся залогинить
+         */
         if (Yii::app()->request->getIsPostRequest()) {
             $login = Yii::app()->request->getParam('login', false);
             $pass = Yii::app()->request->getParam('pass', false);
             if ($login && $pass) {
                 if (!AuthService::getInstance()->login($login, $pass)) {
-                    $this->render('login');
+                    $this->render('login', array('login' => $login));
                     return;
                 } else {
                     $this->redirect(array('profile/index'));

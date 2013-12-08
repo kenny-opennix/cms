@@ -75,7 +75,32 @@
  */
 class CController extends CBaseController
 {
-	/**
+
+    /**
+     * @Author dimka3210 <dimka3210@gmail.com>
+     * @var $_viewArgs array for view variables
+     */
+    private static $_viewArgs = array();
+
+    /**
+     * @param $key string
+     * @param null $value
+     */
+    public function view($key, $value = null)
+    {
+        if (empty(self::$_viewArgs[$key])) {
+            self::$_viewArgs[$key] = $value;
+        } else {
+            self::$_viewArgs[$key] = array(self::$_viewArgs[$key], $value);
+        }
+    }
+
+    /**
+     * dimka3210 END
+     */
+
+
+    /**
 	 * Name of the hidden field storing persistent page states.
 	 */
 	const STATE_INPUT_NAME='YII_PAGE_STATE';
@@ -777,6 +802,12 @@ class CController extends CBaseController
 	 */
 	public function render($view,$data=null,$return=false)
 	{
+        if ($data === null) {
+            $data = self::$_viewArgs;
+        } else {
+            $data = array_merge($data, self::$_viewArgs);
+        }
+
 		if($this->beforeRender($view))
 		{
 			$output=$this->renderPartial($view,$data,true);

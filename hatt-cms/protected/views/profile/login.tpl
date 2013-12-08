@@ -3,7 +3,7 @@
         <legend>Вход</legend>
         <label>
             Введите логин:
-            <input type="text" name="login"/>
+            <input type="text" name="login" value="{if isset($login)}{$login}{/if}"/>
         </label>
         <label>
             Введите пароль:
