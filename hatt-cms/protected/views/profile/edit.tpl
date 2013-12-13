@@ -1,65 +1,74 @@
+{$this->widget('CActiveForm', [
+'id'=>'profile-edit-form',
+'enableClientValidation'=>true,
+'clientOptions'=>[
+'validateOnSubmit'=>true
+]
+],true)}
+{*
+
 <div class="form">
     <p class="note">Fields with <span class="required">*</span> are required.</p>
-    {$this->form->errorSummary($model)}
+    {$form->errorSummary($model)}
 
     <div class="row">
-        {$this->form->labelEx($model,'login')}
-        {$this->form->textField($model,'login')}
-        {$this->form->error($model,'login')}
+        {$form->labelEx($model,'login')}
+        {$form->textField($model,'login')}
+        {$form->error($model,'login')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'email')}
-        {$this->form->textField($model,'email')}
-        {$this->form->error($model,'email')}
+        {$form->labelEx($model,'email')}
+        {$form->textField($model,'email')}
+        {$form->error($model,'email')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'pass')}
-        {$this->form->textField($model,'pass')}
-        {$this->form->error($model,'pass')}
+        {$form->labelEx($model,'pass')}
+        {$form->textField($model,'pass')}
+        {$form->error($model,'pass')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'reg_date')}
-        {$this->form->textField($model,'reg_date')}
-        {$this->form->error($model,'reg_date')}
+        {$form->labelEx($model,'reg_date')}
+        {$form->textField($model,'reg_date')}
+        {$form->error($model,'reg_date')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'birthday')}
-        {$this->form->textField($model,'birthday')}
-        {$this->form->error($model,'birthday')}
+        {$form->labelEx($model,'birthday')}
+        {$form->textField($model,'birthday')}
+        {$form->error($model,'birthday')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'level')}
-        {$this->form->textField($model,'level')}
-        {$this->form->error($model,'level')}
+        {$form->labelEx($model,'level')}
+        {$form->textField($model,'level')}
+        {$form->error($model,'level')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'reg_ip')}
-        {$this->form->textField($model,'reg_ip')}
-        {$this->form->error($model,'reg_ip')}
+        {$form->labelEx($model,'reg_ip')}
+        {$form->textField($model,'reg_ip')}
+        {$form->error($model,'reg_ip')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'auth_token')}
-        {$this->form->textField($model,'auth_token')}
-        {$this->form->error($model,'auth_token')}
+        {$form->labelEx($model,'auth_token')}
+        {$form->textField($model,'auth_token')}
+        {$form->error($model,'auth_token')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'avatar')}
-        {$this->form->textField($model,'avatar')}
-        {$this->form->error($model,'avatar')}
+        {$form->labelEx($model,'avatar')}
+        {$form->textField($model,'avatar')}
+        {$form->error($model,'avatar')}
     </div>
 
     <div class="row">
-        {$this->form->labelEx($model,'gender')}
-        {$this->form->textField($model,'gender')}
-        {$this->form->error($model,'gender')}
+        {$form->labelEx($model,'gender')}
+        {$form->textField($model,'gender')}
+        {$form->error($model,'gender')}
     </div>
 
 
@@ -68,3 +77,4 @@
     </div>
 
 </div><!-- form -->
+*}

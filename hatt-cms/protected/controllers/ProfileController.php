@@ -2,13 +2,6 @@
 
 class ProfileController extends Controller
 {
-    /**
-     * @var CActiveForm
-     * Не знаю почему, но Smarty пытается преобразовать его в строку.
-     * Поэтому делаем прямое обращение.
-     */
-    public $form;
-
     public function actionIndex()
     {
         $this->_checkAuth();
@@ -26,11 +19,6 @@ class ProfileController extends Controller
                 $model->save();
             }
         }
-
-        $this->form = $this->beginWidget('CActiveForm', [
-            'id' => 'users-edit-form',
-            'enableAjaxValidation' => false
-        ]);
 
         $this->render('edit', array('model' => $model));
     }

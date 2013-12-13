@@ -6,6 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="ru"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -25,7 +27,12 @@
             <li><a href="#">Page 5</a></li>
         </ul>
     </div>
-
+    <?php
+//    $baseUrl = Yii::app()->baseUrl;
+//    $cs = Yii::app()->getClientScript();
+//    $cs->registerScriptFile($baseUrl.'../web/js/bootstrap.min.js');
+//    $cs->registerCssFile($baseUrl.'/css/yourcss.css');
+    ?>
     <?php echo $content; ?>
 
     <div class="clear"></div>
@@ -37,5 +44,6 @@
 </div>
 <!-- page -->
 
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </body>
 </html>
