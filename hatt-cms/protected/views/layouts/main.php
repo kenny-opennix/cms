@@ -20,24 +20,25 @@
 
     <div id="mainmenu">
         <ul>
-            <li><a href="#">Page 1</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Page 2</a></li>
             <li><a href="#">Page 3</a></li>
-            <li><a href="#">Page 4</a></li>
-            <li><a href="#">Page 5</a></li>
+            <li><a href="/topics">Topics</a></li>
+            <li><a href="/profile">Profile</a></li>
         </ul>
     </div>
     <?php
-//    $baseUrl = Yii::app()->baseUrl;
-//    $cs = Yii::app()->getClientScript();
-//    $cs->registerScriptFile($baseUrl.'../web/js/bootstrap.min.js');
-//    $cs->registerCssFile($baseUrl.'/css/yourcss.css');
+    //    $baseUrl = Yii::app()->baseUrl;
+    //    $cs = Yii::app()->getClientScript();
+    //    $cs->registerScriptFile($baseUrl.'../web/js/bootstrap.min.js');
+    //    $cs->registerCssFile($baseUrl.'/css/yourcss.css');
     ?>
     <?php echo $content; ?>
 
     <div class="clear"></div>
 
     <div id="footer">
+        <?php include_once('footer.php') ?>
     </div>
     <!-- footer -->
 

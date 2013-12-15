@@ -3,41 +3,26 @@
 class SiteController extends Controller
 {
     /**
-     * Declares class-based actions.
+     * Вызывается на каждый action.
+     * Этакий конструктор в контроллерах.
      */
-    public function actions()
+    public function init()
     {
-        return array(
-            // captcha action renders the CAPTCHA image displayed on the contact page
-            'captcha' => array(
-                'class' => 'CCaptchaAction',
-                'backColor' => 0xFFFFFF,
-            ),
-            // page action renders "static" pages stored under 'protected/views/site/pages'
-            // They can be accessed via: index.php?r=site/page&view=FileName
-            'page' => array(
-                'class' => 'CViewAction',
-            ),
-        );
+        $cs = Yii::app()->getClientScript();
+        $cs->registerCssFile('/css/private/index.css');
     }
 
-    /**
-     * This is the default 'index' action that is invoked
-     * when an action is not explicitly requested by users.
-     */
     public function actionIndex()
     {
-        $categories = Categories::model()->findAll(array('condition' => 'is_main > 0', 'order' => '`order` DESC'));
-
+        $cache = $this->getCache();
+        $categories = Categories::model()->findAll(array('condition' => 'is_main > 0', 'order' => 'sort_index'));
 
         $this->render('index', array(
-            'CATEGORIES' => $categories
+            'CATEGORIES' => $categories,
+            'COUNT_CATEGORIES' => count($categories)
         ));
     }
 
-    /**
-     * This is the action to handle external exceptions.
-     */
     public function actionError()
     {
         if ($error = Yii::app()->errorHandler->error) {

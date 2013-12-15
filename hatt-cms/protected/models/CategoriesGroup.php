@@ -1,27 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "categories".
+ * This is the model class for table "categories_group".
  *
- * The followings are the available columns in table 'categories':
+ * The followings are the available columns in table 'categories_group':
  * @property string $id
- * @property string $categories_group_id
  * @property string $name
- * @property integer $is_main
  * @property integer $sort_index
  *
  * The followings are the available model relations:
- * @property CategoriesGroup $categoriesGroup
- * @property Topics[] $topics
+ * @property Categories[] $categories
  */
-class Categories extends CActiveRecord
+class CategoriesGroup extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'categories';
+		return 'categories_group';
 	}
 
 	/**
@@ -32,12 +29,12 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_main, sort_index', 'numerical', 'integerOnly'=>true),
-			array('categories_group_id', 'length', 'max'=>11),
+			array('name', 'required'),
+			array('sort_index', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, categories_group_id, name, is_main, sort_index', 'safe', 'on'=>'search'),
+			array('id, name, sort_index', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +46,7 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'categoriesGroup' => array(self::BELONGS_TO, 'CategoriesGroup', 'categories_group_id'),
-			'topics' => array(self::HAS_MANY, 'Topics', 'categories_id'),
+			'categories' => array(self::HAS_MANY, 'Categories', 'categories_group_id'),
 		);
 	}
 
@@ -61,9 +57,7 @@ class Categories extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'categories_group_id' => 'Categories Group',
 			'name' => 'Name',
-			'is_main' => 'Is Main',
 			'sort_index' => 'Sort Index',
 		);
 	}
@@ -87,9 +81,7 @@ class Categories extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('categories_group_id',$this->categories_group_id,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('is_main',$this->is_main);
 		$criteria->compare('sort_index',$this->sort_index);
 
 		return new CActiveDataProvider($this, array(
@@ -101,7 +93,7 @@ class Categories extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Categories the static model class
+	 * @return CategoriesGroup the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

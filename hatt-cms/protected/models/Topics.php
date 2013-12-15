@@ -1,27 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "categories".
+ * This is the model class for table "topics".
  *
- * The followings are the available columns in table 'categories':
- * @property string $id
- * @property string $categories_group_id
+ * The followings are the available columns in table 'topics':
+ * @property integer $id
+ * @property string $users_id
  * @property string $name
- * @property integer $is_main
- * @property integer $sort_index
+ * @property string $text
+ * @property string $created_date
+ * @property string $modify_date
+ * @property integer $status
+ * @property string $mod_comment
  *
  * The followings are the available model relations:
- * @property CategoriesGroup $categoriesGroup
- * @property Topics[] $topics
+ * @property Users $users
  */
-class Categories extends CActiveRecord
+class Topics extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'categories';
+		return 'topics';
 	}
 
 	/**
@@ -32,12 +34,15 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_main, sort_index', 'numerical', 'integerOnly'=>true),
-			array('categories_group_id', 'length', 'max'=>11),
-			array('name', 'length', 'max'=>128),
+			array('text, mod_comment', 'required'),
+			array('status', 'numerical', 'integerOnly'=>true),
+			array('users_id', 'length', 'max'=>11),
+			array('name', 'length', 'max'=>255),
+			array('mod_comment', 'length', 'max'=>128),
+			array('created_date, modify_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, categories_group_id, name, is_main, sort_index', 'safe', 'on'=>'search'),
+			array('id, users_id, name, text, created_date, modify_date, status, mod_comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +54,7 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'categoriesGroup' => array(self::BELONGS_TO, 'CategoriesGroup', 'categories_group_id'),
-			'topics' => array(self::HAS_MANY, 'Topics', 'categories_id'),
+			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
 		);
 	}
 
@@ -61,10 +65,13 @@ class Categories extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'categories_group_id' => 'Categories Group',
+			'users_id' => 'Users',
 			'name' => 'Name',
-			'is_main' => 'Is Main',
-			'sort_index' => 'Sort Index',
+			'text' => 'Text',
+			'created_date' => 'Created Date',
+			'modify_date' => 'Modify Date',
+			'status' => 'Status',
+			'mod_comment' => 'Mod Comment',
 		);
 	}
 
@@ -86,11 +93,14 @@ class Categories extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('categories_group_id',$this->categories_group_id,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('users_id',$this->users_id,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('is_main',$this->is_main);
-		$criteria->compare('sort_index',$this->sort_index);
+		$criteria->compare('text',$this->text,true);
+		$criteria->compare('created_date',$this->created_date,true);
+		$criteria->compare('modify_date',$this->modify_date,true);
+		$criteria->compare('status',$this->status);
+		$criteria->compare('mod_comment',$this->mod_comment,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,7 +111,7 @@ class Categories extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Categories the static model class
+	 * @return Topics the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
