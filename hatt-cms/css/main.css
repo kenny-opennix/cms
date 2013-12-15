@@ -228,3 +228,25 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+/** CUSTOM */
+
+.fieldset {
+    padding: 20px;
+    font-family: Arial, serif;
+    font-size: 20pt;
+}
+
+.copyright {
+    padding: 0;
+    margin: 0;
+}
+
+.copyright li {
+    width: 100px;
+    color: #666666;
+    float: left;
+    list-style: none;
+    font-family: Arial, serif;
+    font-size: 7pt;
+}

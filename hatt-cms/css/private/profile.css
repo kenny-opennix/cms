@@ -1,0 +1,14 @@
+.profile-view .pd20 {
+    padding: 20px;
+}
+
+.profile-view .m10 {
+    border: 1px solid #424242;
+    padding: 4px;
+    margin: 10px;
+}
+
+.profile-view .br4 {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}

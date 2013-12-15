@@ -2,6 +2,11 @@
 
 class ProfileController extends Controller
 {
+    public function init(){
+        $cs = Yii::app()->getClientScript();
+        $cs->registerCssFile('/css/private/profile.css');
+    }
+
     public function actionIndex()
     {
         $this->_checkAuth();
