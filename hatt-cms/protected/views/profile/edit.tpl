@@ -1,80 +1,40 @@
-{$this->widget('CActiveForm', [
-'id'=>'profile-edit-form',
-'enableClientValidation'=>true,
-'clientOptions'=>[
-'validateOnSubmit'=>true
-]
-],true)}
-{*
-
-<div class="form">
-    <p class="note">Fields with <span class="required">*</span> are required.</p>
-    {$form->errorSummary($model)}
-
-    <div class="row">
-        {$form->labelEx($model,'login')}
-        {$form->textField($model,'login')}
-        {$form->error($model,'login')}
+<div style="padding: 10px 0 0 0"></div>
+<div class="row">
+    <div class="span2" style="text-align: center;">
+        <img src="http://dummyimage.com/150x300/000/fff"/>
     </div>
-
-    <div class="row">
-        {$form->labelEx($model,'email')}
-        {$form->textField($model,'email')}
-        {$form->error($model,'email')}
+    <div class="span10">
+        <table class="table table-striped">
+            <tr>
+                <td style="width: 50%">Логин *</td>
+                <td><input type="text" value="{$model.login}" name="login"></td>
+            </tr>
+            <tr>
+                <td>Email *</td>
+                <td><input type="text" value="{$model.email}" name="email"></td>
+            </tr>
+            <tr>
+                <td>Пароль *</td>
+                <td><input type="password" value="" name="pass"></td>
+            </tr>
+            <tr>
+                <td>Повторите пароль *</td>
+                <td><input type="password" value="" name="pass"></td>
+            </tr>
+            <tr>
+                <td>Пол</td>
+                <td>
+                    <select name="gender">
+                        <option value="0"{if $model.gender == 0} selected{/if}>Не указано</option>
+                        <option value="1"{if $model.gender == 1} selected{/if}>Мужской</option>
+                        <option value="2"{if $model.gender == 2} selected{/if}>Женский</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Дата рождения</td>
+                <td></td>
+            </tr>
+        </table>
     </div>
-
-    <div class="row">
-        {$form->labelEx($model,'pass')}
-        {$form->textField($model,'pass')}
-        {$form->error($model,'pass')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'reg_date')}
-        {$form->textField($model,'reg_date')}
-        {$form->error($model,'reg_date')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'birthday')}
-        {$form->textField($model,'birthday')}
-        {$form->error($model,'birthday')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'level')}
-        {$form->textField($model,'level')}
-        {$form->error($model,'level')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'reg_ip')}
-        {$form->textField($model,'reg_ip')}
-        {$form->error($model,'reg_ip')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'auth_token')}
-        {$form->textField($model,'auth_token')}
-        {$form->error($model,'auth_token')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'avatar')}
-        {$form->textField($model,'avatar')}
-        {$form->error($model,'avatar')}
-    </div>
-
-    <div class="row">
-        {$form->labelEx($model,'gender')}
-        {$form->textField($model,'gender')}
-        {$form->error($model,'gender')}
-    </div>
-
-
-    <div class="row buttons">
-        {CHtml::submitButton('Submit')}
-    </div>
-
-</div><!-- form -->
-*}
+</div>

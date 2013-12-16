@@ -1,5 +1,9 @@
 <table class="table table-striped">
     <tr>
+        <th>Действия: </th>
+        <th><a href="/profile/edit">Редактировать</a> &nbsp; <a href="/profile/logout">Выход</a> </th>
+    </tr>
+    <tr>
         <td>Ваш ID в системе:</td>
         <td>{$user_info.id}</td>
     </tr>

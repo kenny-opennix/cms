@@ -82,6 +82,7 @@ class AuthService
 
     public function logout()
     {
+        setcookie('auth_token', null, time());
         unset($_SESSION[self::CA]);
     }
 } 
