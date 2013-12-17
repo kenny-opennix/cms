@@ -21,18 +21,20 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `categories_group_id` int(11) unsigned DEFAULT NULL,
   `name` varchar(128) NOT NULL DEFAULT '',
   `is_main` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Показывать на главной',
+  `is_show` tinyint(1) NOT NULL DEFAULT '1',
   `sort_index` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `FK_categories_categories_group` (`categories_group_id`),
   CONSTRAINT `FK_categories_categories_group` FOREIGN KEY (`categories_group_id`) REFERENCES `categories_group` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Категории';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Категории';
 
--- Дамп данных таблицы hatt.categories: ~3 rows (приблизительно)
+-- Дамп данных таблицы hatt.categories: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` (`id`, `categories_group_id`, `name`, `is_main`, `sort_index`) VALUES
-	(1, 2, 'Первая категория', 1, 0),
-	(2, 2, 'Вторая категория', 1, 1),
-	(3, 3, 'Категория с новостями', 0, 0);
+INSERT INTO `categories` (`id`, `categories_group_id`, `name`, `is_main`, `is_show`, `sort_index`) VALUES
+	(1, 1, 'Российские', 1, 1, 0),
+	(2, 1, 'Зарубежные', 1, 1, 1),
+	(3, 2, 'Российские', 0, 1, 0),
+	(4, 2, 'Зарубежные', 0, 1, 0);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 
@@ -41,15 +43,16 @@ CREATE TABLE IF NOT EXISTS `categories_group` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `sort_index` int(11) NOT NULL DEFAULT '0',
+  `is_show` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы hatt.categories_group: ~1 rows (приблизительно)
+-- Дамп данных таблицы hatt.categories_group: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `categories_group` DISABLE KEYS */;
-INSERT INTO `categories_group` (`id`, `name`, `sort_index`) VALUES
-	(1, 'Моя первая группа', 0),
-	(2, 'Вторая группа', 1),
-	(3, 'Третья Группа', -1);
+INSERT INTO `categories_group` (`id`, `name`, `sort_index`, `is_show`) VALUES
+	(1, 'Фильмы', 0, 1),
+	(2, 'Сериалы', 1, 1),
+	(3, 'Музыка', -1, 1);
 /*!40000 ALTER TABLE `categories_group` ENABLE KEYS */;
 
 
@@ -121,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы hatt.users: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
-	(1, '7d208d3a61a55874cc309a7ca5ab4eab', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '2', '2013-12-05 23:47:28'),
+	(1, '10bd9578ce6e7354c8b5e6698d296996', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28'),
 	(2, NULL, '123', '', '', '0000-00-00 00:00:00', 0, 0, NULL, '0', '0000-00-00 00:00:00'),
 	(4, 'cdec3d1ee82ddb07f7de11005d5f87d5', 'dimka32101', 'dimka3210@gmail.com1', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;

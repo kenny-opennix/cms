@@ -8,6 +8,7 @@
  * @property string $categories_group_id
  * @property string $name
  * @property integer $is_main
+ * @property integer $is_show
  * @property integer $sort_index
  *
  * The followings are the available model relations:
@@ -32,12 +33,12 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_main, sort_index', 'numerical', 'integerOnly'=>true),
+			array('is_main, is_show, sort_index', 'numerical', 'integerOnly'=>true),
 			array('categories_group_id', 'length', 'max'=>11),
 			array('name', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, categories_group_id, name, is_main, sort_index', 'safe', 'on'=>'search'),
+			array('id, categories_group_id, name, is_main, is_show, sort_index', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +65,7 @@ class Categories extends CActiveRecord
 			'categories_group_id' => 'Categories Group',
 			'name' => 'Name',
 			'is_main' => 'Is Main',
+			'is_show' => 'Is Show',
 			'sort_index' => 'Sort Index',
 		);
 	}
@@ -90,6 +92,7 @@ class Categories extends CActiveRecord
 		$criteria->compare('categories_group_id',$this->categories_group_id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('is_main',$this->is_main);
+		$criteria->compare('is_show',$this->is_show);
 		$criteria->compare('sort_index',$this->sort_index);
 
 		return new CActiveDataProvider($this, array(

@@ -34,4 +34,11 @@ class Controller extends CController
         }
         return $this->cache;
     }
+
+    public function init()
+    {
+        if (isset($_GET['clear_cache']) && $_GET['clear_cache'] == '1') {
+            $this->getCache()->flush();
+        }
+    }
 }
