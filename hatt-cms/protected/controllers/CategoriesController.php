@@ -17,6 +17,17 @@ class CategoriesController extends Controller
         $this->render('index', array('CATEGORIES' => $categoriesWithGroups));
     }
 
+    public function actionGroup($id = null)
+    {
+        $categories = Categories::model()->findAll(array('condition' => 'categories_group_id=' . intval($id) . ' AND is_show > 0'));
+
+        if (is_null($id) || !intval($id) || !count($categories)) {
+            throw new CHttpException(404, 'Плохой параметр!');
+        }
+
+        $this->render('group', array('CATEGORIES' => $categories));
+    }
+
     /**
      * @param $groups
      * @param $categories
@@ -26,7 +37,7 @@ class CategoriesController extends Controller
     {
         $tree = array();
         foreach ($groups as $group) {
-            $tree[$group->id] = array('item' =>$group, 'child' => array());
+            $tree[$group->id] = array('item' => $group, 'child' => array());
 
             foreach ($categories as $cat) {
                 if ($cat->categories_group_id == $group->id) {
