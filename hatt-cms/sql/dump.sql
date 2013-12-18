@@ -56,6 +56,28 @@ INSERT INTO `categories_group` (`id`, `name`, `sort_index`, `is_show`) VALUES
 /*!40000 ALTER TABLE `categories_group` ENABLE KEYS */;
 
 
+-- Дамп структуры для процедура hatt.create@users
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `create@users`()
+BEGIN
+	DECLARE _max int unsigned default 5;
+	DECLARE _counter int unsigned default 0;
+	DECLARE _rnd int unsigned default 1;
+--   DECLARE _rnd = FLOOR(0 + (rand() * 65535));
+
+
+  START TRANSACTION;
+  WHILE _counter < _max DO
+  	 set _rnd = FLOOR(0 + (rand() * 65535));
+    INSERT into users (users.login, users.email, users.pass, users.reg_date, users.level, users.gender, users.birthday)
+	 VALUES (CONCAT('user', _rnd), CONCAT('test', _rnd, '@mail.com'), MD5(_rnd), NOW() - INTERVAL 20 YEAR, 0, 0, NOW());
+    set _counter=_counter+1;
+  end while;
+  commit;
+END//
+DELIMITER ;
+
+
 -- Дамп структуры для таблица hatt.news
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -71,6 +93,19 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- Дамп данных таблицы hatt.news: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица hatt.ranks
+CREATE TABLE IF NOT EXISTS `ranks` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `img_path` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы hatt.ranks: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `ranks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ranks` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица hatt.topics
@@ -119,15 +154,27 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `login` (`login`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `auth_token` (`auth_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы hatt.users: ~3 rows (приблизительно)
+-- Дамп данных таблицы hatt.users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
-	(1, '10bd9578ce6e7354c8b5e6698d296996', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28'),
-	(2, NULL, '123', '', '', '0000-00-00 00:00:00', 0, 0, NULL, '0', '0000-00-00 00:00:00'),
-	(4, 'cdec3d1ee82ddb07f7de11005d5f87d5', 'dimka32101', 'dimka3210@gmail.com1', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
+	(1, '59681d9d13ea8da22b0ae003d0152363', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица hatt.users_groups
+CREATE TABLE IF NOT EXISTS `users_groups` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `color` char(6) NOT NULL DEFAULT 'FFFFFF',
+  `ranks_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Группы пользователей';
+
+-- Дамп данных таблицы hatt.users_groups: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
