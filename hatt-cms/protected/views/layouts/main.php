@@ -22,8 +22,8 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-            <li><a href="/topics">Topics</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/members">Members</a></li>
             <li><a href="/profile">Profile</a></li>
         </ul>
     </div>

@@ -73,7 +73,7 @@ class AuthService
             $user->setAttribute('auth_token', md5($user->login . time()));
             $user->save();
             $_SESSION[self::CA] = $user->getAttributes();
-            setcookie('auth_token', $user->getAttribute('auth_token'));
+            setcookie('auth_token', $user->getAttribute('auth_token'), time() + 3600, '/');
             return true;
         }
 
