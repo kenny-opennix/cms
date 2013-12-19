@@ -16,8 +16,9 @@
 	<ul>
 		<li class="active"><a class="brand" href="/"><?php echo CHtml::encode(Yii::app()->name); ?></a></li>
 		<li><a href="/topics">Topics</a></li>
-		<li><a href="/profile">Profile</a></li>
-		<li><a href="#contact">Contact</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/members">Members</a></li>
+        <li><a href="/profile">Profile</a></li>
 	</ul>
 </div>
 
