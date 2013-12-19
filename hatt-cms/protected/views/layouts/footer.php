@@ -6,15 +6,8 @@
  */
 ?>
 
-<div class="row">
-    <div class="span4"></div>
-    <div class="span4">
-        <div class="copyright">
-            <ul>
-                <li>Yii Framework</li>
-                <li>HATT-CMS</li>
-            </ul>
-        </div>
-    </div>
-    <div class="span4"></div>
-</div>
+<hr></hr>
+<footer>
+    <a href="http://yiiframework.com" target="_blank">Yii Framework</a>
+    <a href="http://hatt-cms.tk" target="_blank">HATT-CMS</a>
+</footer>

@@ -6,44 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="ru"/>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"/>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
-<div class="container" id="page">
-    <div id="header">
-        <div id="logo"><a href="/"><?php echo CHtml::encode(Yii::app()->name); ?></a></div>
-    </div>
-    <!-- header -->
-
-    <div id="mainmenu">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="/categories">Categories</a></li>
-            <li><a href="/members">Members</a></li>
-            <li><a href="/profile">Profile</a></li>
-        </ul>
-    </div>
-    <?php
-    //    $baseUrl = Yii::app()->baseUrl;
-    //    $cs = Yii::app()->getClientScript();
-    //    $cs->registerScriptFile($baseUrl.'../web/js/bootstrap.min.js');
-    //    $cs->registerCssFile($baseUrl.'/css/yourcss.css');
-    ?>
-    <?php echo $content; ?>
-
-    <div class="clear"></div>
-
-    <div id="footer">
-        <?php include_once('footer.php') ?>
-    </div>
-    <!-- footer -->
-
+<div class="topmenu">
+	<ul>
+		<li class="active"><a class="brand" href="/"><?php echo CHtml::encode(Yii::app()->name); ?></a></li>
+		<li><a href="/topics">Topics</a></li>
+		<li><a href="/profile">Profile</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
 </div>
+
+<div id="Container">
+<!-- header -->
+	<?php echo $content; ?>
+	<?php include_once('footer.php') ?>
 <!-- page -->
+</div>
 
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 </body>
