@@ -8,6 +8,7 @@
  * @property string $name
  * @property string $color
  * @property integer $ranks_id
+ * @property string $level
  */
 class UsersGroups extends CActiveRecord
 {
@@ -31,9 +32,10 @@ class UsersGroups extends CActiveRecord
 			array('ranks_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>128),
 			array('color', 'length', 'max'=>6),
+			array('level', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, color, ranks_id', 'safe', 'on'=>'search'),
+			array('id, name, color, ranks_id, level', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +60,7 @@ class UsersGroups extends CActiveRecord
 			'name' => 'Name',
 			'color' => 'Color',
 			'ranks_id' => 'Ranks',
+			'level' => 'Level',
 		);
 	}
 
@@ -83,6 +86,7 @@ class UsersGroups extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('color',$this->color,true);
 		$criteria->compare('ranks_id',$this->ranks_id);
+		$criteria->compare('level',$this->level,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

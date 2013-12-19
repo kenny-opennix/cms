@@ -101,10 +101,16 @@ CREATE TABLE IF NOT EXISTS `ranks` (
   `name` varchar(50) NOT NULL,
   `img_path` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы hatt.ranks: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `ranks` DISABLE KEYS */;
+INSERT INTO `ranks` (`id`, `name`, `img_path`) VALUES
+	(1, 'Администраторы', NULL),
+	(2, 'Модераторы', NULL),
+	(3, 'VIP', NULL),
+	(4, 'Киноманы', NULL),
+	(5, 'Меломаны', NULL);
 /*!40000 ALTER TABLE `ranks` ENABLE KEYS */;
 
 
@@ -159,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы hatt.users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
-	(1, '59681d9d13ea8da22b0ae003d0152363', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
+	(1, 'ad17281ba8d218a48e56453924156ac4', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
@@ -169,11 +175,16 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   `name` varchar(128) NOT NULL,
   `color` char(6) NOT NULL DEFAULT 'FFFFFF',
   `ranks_id` int(11) DEFAULT NULL,
+  `level` enum('0','1','2') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Группы пользователей';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Группы пользователей';
 
 -- Дамп данных таблицы hatt.users_groups: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
+INSERT INTO `users_groups` (`id`, `name`, `color`, `ranks_id`, `level`) VALUES
+	(1, 'Администраторы', 'FFFFFF', 1, '1'),
+	(2, 'Модераторы', 'FFFFFF', 2, '2'),
+	(3, 'VIP', 'FFFFFF', 3, '0');
 /*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

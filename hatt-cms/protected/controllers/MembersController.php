@@ -9,7 +9,8 @@ class MembersController extends Controller
 
 	public function actionIndex()
 	{
-		$this->render('index');
+        $groups = UsersGroups::model()->findAll(array('condition' => 'level > 1'));
+        $this->render('index', array('GROUPS' => $groups));
 	}
 
 	public function actionShow()
