@@ -64,10 +64,6 @@ class AuthService
             $pass = md5($pass);
         }
 
-        if (isset($_SESSION[self::CA])) {
-            return true;
-        }
-
         $user = Users::model()->find('login=:l AND pass=:p', array(':l' => $login, ':p' => $pass));
         if ($user) {
             $user->setAttribute('auth_token', md5($user->login . time()));
