@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `ranks` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы hatt.ranks: ~0 rows (приблизительно)
+-- Дамп данных таблицы hatt.ranks: ~5 rows (приблизительно)
 /*!40000 ALTER TABLE `ranks` DISABLE KEYS */;
 INSERT INTO `ranks` (`id`, `name`, `img_path`) VALUES
 	(1, 'Администраторы', NULL),
@@ -165,8 +165,24 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы hatt.users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
-	(1, 'ad17281ba8d218a48e56453924156ac4', 'dimka3210', 'dimka3210@gmail.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
+	(1, '78c901a9f414d31c3da68060e8ff52b4', 'admin', 'admin@example.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица hatt.users2groups
+CREATE TABLE IF NOT EXISTS `users2groups` (
+  `users_id` int(11) unsigned NOT NULL,
+  `users_groups_id` int(11) unsigned NOT NULL,
+  `data_created` datetime NOT NULL,
+  `level` enum('0','1','2') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`users_id`,`users_groups_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы hatt.users2groups: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `users2groups` DISABLE KEYS */;
+INSERT INTO `users2groups` (`users_id`, `users_groups_id`, `data_created`, `level`) VALUES
+	(1, 1, '2013-12-20 00:11:18', '1');
+/*!40000 ALTER TABLE `users2groups` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица hatt.users_groups
@@ -179,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Группы пользователей';
 
--- Дамп данных таблицы hatt.users_groups: ~0 rows (приблизительно)
+-- Дамп данных таблицы hatt.users_groups: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
 INSERT INTO `users_groups` (`id`, `name`, `color`, `ranks_id`, `level`) VALUES
 	(1, 'Администраторы', 'FFFFFF', 1, '1'),
