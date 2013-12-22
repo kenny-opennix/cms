@@ -22,7 +22,7 @@ class CategoriesController extends Controller
 
     public function actionGroup($id = null)
     {
-        $this->checkCategories($id);
+        $this->checkCategories($id, 'categories_group_id');
 
         $this->render('group', array('CATEGORIES' => $this->categories));
     }
@@ -34,8 +34,10 @@ class CategoriesController extends Controller
     public function actionView($id = null)
     {
         $this->checkCategories($id, 'id');
+        $criteria = new CDbCriteria(array('condition' => 'categories_id=' . $id, 'order' => 't.id DESC'));
+        $topics = Topics::model()->getActiveFinder('users')->query($criteria, true);
 
-        $this->render('view');
+        $this->render('view', array('TOPICS' => $topics));
     }
 
     /**
@@ -64,7 +66,7 @@ class CategoriesController extends Controller
      * @param string $field
      * @throws CHttpException
      */
-    private function checkCategories($id, $field = 'categories_group_id')
+    private function checkCategories($id, $field = 'id')
     {
         $this->categories = Categories::model()->findAll(array('condition' => $field . '=' . intval($id) . ' AND is_show > 0'));
 
