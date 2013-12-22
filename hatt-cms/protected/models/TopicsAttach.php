@@ -1,32 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "topics".
+ * This is the model class for table "topics_attach".
  *
- * The followings are the available columns in table 'topics':
+ * The followings are the available columns in table 'topics_attach':
  * @property string $id
- * @property string $users_id
- * @property string $categories_id
+ * @property string $topics_id
  * @property string $name
- * @property string $text
- * @property string $created_date
- * @property string $modify_date
- * @property integer $status
- * @property string $mod_comment
+ * @property string $create_date
+ * @property string $physic_file
  *
  * The followings are the available model relations:
- * @property Categories $categories
- * @property Users $users
- * @property TopicsAttach[] $topicsAttaches
+ * @property Topics $topics
  */
-class Topics extends CActiveRecord
+class TopicsAttach extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'topics';
+		return 'topics_attach';
 	}
 
 	/**
@@ -37,15 +31,14 @@ class Topics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('text, mod_comment', 'required'),
-			array('status', 'numerical', 'integerOnly'=>true),
-			array('users_id, categories_id', 'length', 'max'=>11),
-			array('name', 'length', 'max'=>255),
-			array('mod_comment', 'length', 'max'=>128),
-			array('created_date, modify_date', 'safe'),
+			array('name', 'required'),
+			array('topics_id', 'length', 'max'=>11),
+			array('name', 'length', 'max'=>50),
+			array('physic_file', 'length', 'max'=>256),
+			array('create_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, users_id, categories_id, name, text, created_date, modify_date, status, mod_comment', 'safe', 'on'=>'search'),
+			array('id, topics_id, name, create_date, physic_file', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,9 +50,7 @@ class Topics extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'categories' => array(self::BELONGS_TO, 'Categories', 'categories_id'),
-			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
-			'topicsAttaches' => array(self::HAS_MANY, 'TopicsAttach', 'topics_id'),
+			'topics' => array(self::BELONGS_TO, 'Topics', 'topics_id'),
 		);
 	}
 
@@ -70,14 +61,10 @@ class Topics extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'users_id' => 'Users',
-			'categories_id' => 'Categories',
+			'topics_id' => 'Topics',
 			'name' => 'Name',
-			'text' => 'Text',
-			'created_date' => 'Created Date',
-			'modify_date' => 'Modify Date',
-			'status' => 'Status',
-			'mod_comment' => 'Mod Comment',
+			'create_date' => 'Create Date',
+			'physic_file' => 'Physic File',
 		);
 	}
 
@@ -100,14 +87,10 @@ class Topics extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('users_id',$this->users_id,true);
-		$criteria->compare('categories_id',$this->categories_id,true);
+		$criteria->compare('topics_id',$this->topics_id,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('text',$this->text,true);
-		$criteria->compare('created_date',$this->created_date,true);
-		$criteria->compare('modify_date',$this->modify_date,true);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('mod_comment',$this->mod_comment,true);
+		$criteria->compare('create_date',$this->create_date,true);
+		$criteria->compare('physic_file',$this->physic_file,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -118,7 +101,7 @@ class Topics extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Topics the static model class
+	 * @return TopicsAttach the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

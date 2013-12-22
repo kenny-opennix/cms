@@ -4,6 +4,9 @@ class CategoriesController extends Controller
 {
     const CATEGORIES_TREE = 'categories:group:tree';
 
+    /** @var array */
+    private $categories = array();
+
     public function actionIndex()
     {
         $cache = $this->getCache();
@@ -19,13 +22,20 @@ class CategoriesController extends Controller
 
     public function actionGroup($id = null)
     {
-        $categories = Categories::model()->findAll(array('condition' => 'categories_group_id=' . intval($id) . ' AND is_show > 0'));
+        $this->checkCategories($id);
 
-        if (is_null($id) || !intval($id) || !count($categories)) {
-            throw new CHttpException(404, 'Плохой параметр!');
-        }
+        $this->render('group', array('CATEGORIES' => $this->categories));
+    }
 
-        $this->render('group', array('CATEGORIES' => $categories));
+    /**
+     * Просмотр топиков по категории
+     * @param null $id категории
+     */
+    public function actionView($id = null)
+    {
+        $this->checkCategories($id, 'id');
+
+        $this->render('view');
     }
 
     /**
@@ -47,6 +57,20 @@ class CategoriesController extends Controller
         }
 
         return $tree;
+    }
+
+    /**
+     * @param int $id
+     * @param string $field
+     * @throws CHttpException
+     */
+    private function checkCategories($id, $field = 'categories_group_id')
+    {
+        $this->categories = Categories::model()->findAll(array('condition' => $field . '=' . intval($id) . ' AND is_show > 0'));
+
+        if (is_null($id) || !intval($id) || !count($this->categories)) {
+            throw new CHttpException(404, 'Плохой параметр!');
+        }
     }
 
 }
