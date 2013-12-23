@@ -81,4 +81,9 @@ class AuthService
         setcookie('auth_token', null, time());
         unset($_SESSION[self::CA]);
     }
+
+    public function getUserId()
+    {
+        return $_SESSION[self::CA]['id'];
+    }
 } 

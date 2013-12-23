@@ -93,7 +93,7 @@ return array(
         'cache' => array(
             'class' => 'CFileCache',
 //            'class' => 'CMemCache',
-            )
+        ),
     ),
 
     // application-level parameters that can be accessed

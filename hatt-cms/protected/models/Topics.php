@@ -9,6 +9,7 @@
  * @property string $categories_id
  * @property string $name
  * @property string $text
+ * @property string $text_html
  * @property string $created_date
  * @property string $modify_date
  * @property integer $status
@@ -37,7 +38,7 @@ class Topics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('text, mod_comment', 'required'),
+			array('text, text_html', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('users_id, categories_id', 'length', 'max'=>11),
 			array('name', 'length', 'max'=>255),
@@ -45,7 +46,7 @@ class Topics extends CActiveRecord
 			array('created_date, modify_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, users_id, categories_id, name, text, created_date, modify_date, status, mod_comment', 'safe', 'on'=>'search'),
+			array('id, users_id, categories_id, name, text, text_html, created_date, modify_date, status, mod_comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +75,7 @@ class Topics extends CActiveRecord
 			'categories_id' => 'Categories',
 			'name' => 'Name',
 			'text' => 'Text',
+			'text_html' => 'Text Html',
 			'created_date' => 'Created Date',
 			'modify_date' => 'Modify Date',
 			'status' => 'Status',
@@ -104,6 +106,7 @@ class Topics extends CActiveRecord
 		$criteria->compare('categories_id',$this->categories_id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('text',$this->text,true);
+		$criteria->compare('text_html',$this->text_html,true);
 		$criteria->compare('created_date',$this->created_date,true);
 		$criteria->compare('modify_date',$this->modify_date,true);
 		$criteria->compare('status',$this->status);
