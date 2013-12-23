@@ -8,6 +8,7 @@ class SiteController extends Controller
      */
     public function init()
     {
+        FileUploadService::getInstance()->saveFile('123');
         $cs = Yii::app()->getClientScript();
         $cs->registerCssFile('/css/private/index.css');
     }

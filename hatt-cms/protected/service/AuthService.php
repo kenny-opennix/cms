@@ -82,8 +82,21 @@ class AuthService
         unset($_SESSION[self::CA]);
     }
 
+    /**
+     * @return int
+     */
     public function getUserId()
     {
         return $_SESSION[self::CA]['id'];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin(){
+        if (!isset($_SESSION[self::CA])) {
+            return false;
+        }
+        return intval($_SESSION[self::CA]['level']) === 1;
     }
 } 

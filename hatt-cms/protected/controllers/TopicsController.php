@@ -2,7 +2,6 @@
 
 class TopicsController extends Controller
 {
-
     /**
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed

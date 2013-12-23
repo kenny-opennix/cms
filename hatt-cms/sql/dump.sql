@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`),
   KEY `FK_categories_categories_group` (`categories_group_id`),
   CONSTRAINT `FK_categories_categories_group` FOREIGN KEY (`categories_group_id`) REFERENCES `categories_group` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Категории';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Категории';
 
 -- Дамп данных таблицы hatt.categories: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
@@ -34,7 +34,8 @@ INSERT INTO `categories` (`id`, `categories_group_id`, `name`, `is_main`, `is_sh
 	(1, 1, 'Российские', 1, 1, 0),
 	(2, 1, 'Зарубежные', 1, 1, 1),
 	(3, 2, 'Российские', 0, 1, 0),
-	(4, 2, 'Зарубежные', 0, 1, 0);
+	(4, 2, 'Зарубежные', 0, 1, 0),
+	(5, 3, 'Популярная', 0, 1, 2);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 
@@ -116,11 +117,12 @@ INSERT INTO `ranks` (`id`, `name`, `img_path`) VALUES
 
 -- Дамп структуры для таблица hatt.topics
 CREATE TABLE IF NOT EXISTS `topics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_id` int(11) unsigned DEFAULT NULL,
   `categories_id` int(11) unsigned DEFAULT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `text` text NOT NULL,
+  `text_html` text NOT NULL,
   `created_date` datetime DEFAULT NULL,
   `modify_date` datetime DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
@@ -130,17 +132,28 @@ CREATE TABLE IF NOT EXISTS `topics` (
   KEY `FK_topics_categories` (`categories_id`),
   CONSTRAINT `FK_topics_categories` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `FK_topics_users` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы hatt.topics: ~5 rows (приблизительно)
 /*!40000 ALTER TABLE `topics` DISABLE KEYS */;
-INSERT INTO `topics` (`id`, `users_id`, `categories_id`, `name`, `text`, `created_date`, `modify_date`, `status`, `mod_comment`) VALUES
-	(1, 1, 1, 'sdfdsf', 'dczdvvdv', NULL, NULL, 1, ''),
-	(2, 1, 2, 'sdfdsf', 'dczdvvdv', NULL, NULL, 1, ''),
-	(3, 1, 3, 'sdfdsf', 'dczdvvdv', NULL, NULL, 1, ''),
-	(4, 1, 1, 'sdfdsf', 'dczdvvdv', NULL, NULL, 1, ''),
-	(5, 1, 3, 'sdfdsf', 'dczdvvdv', NULL, NULL, 1, '');
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
+
+
+-- Дамп структуры для таблица hatt.topics_attachment
+CREATE TABLE IF NOT EXISTS `topics_attachment` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `topics_id` int(11) unsigned DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `create_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `physic_file` varchar(256) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `FK_topics_attach_topics` (`topics_id`),
+  CONSTRAINT `FK_topics_attach_topics` FOREIGN KEY (`topics_id`) REFERENCES `topics` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы hatt.topics_attachment: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `topics_attachment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `topics_attachment` ENABLE KEYS */;
 
 
 -- Дамп структуры для таблица hatt.users
@@ -165,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы hatt.users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `auth_token`, `login`, `email`, `pass`, `reg_date`, `level`, `reg_ip`, `avatar`, `gender`, `birthday`) VALUES
-	(1, '78c901a9f414d31c3da68060e8ff52b4', 'admin', 'admin@example.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
+	(1, 'e042687b65a3186c3e9f13397cce5d87', 'admin', 'admin@example.com', '202cb962ac59075b964b07152d234b70', '2013-12-05 23:47:19', 1, 0, '', '1', '2013-12-05 23:47:28');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
@@ -178,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `users2groups` (
   PRIMARY KEY (`users_id`,`users_groups_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы hatt.users2groups: ~0 rows (приблизительно)
+-- Дамп данных таблицы hatt.users2groups: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `users2groups` DISABLE KEYS */;
 INSERT INTO `users2groups` (`users_id`, `users_groups_id`, `data_created`, `level`) VALUES
 	(1, 1, '2013-12-20 00:11:18', '1');
